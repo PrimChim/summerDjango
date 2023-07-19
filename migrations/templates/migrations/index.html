@@ -18,6 +18,12 @@
         <p>{{blog.description}}</p>
     </div>
     {%endfor%}
+    {% if blog %}
+    <div class="blogbox">
+        <h1>{{blog.title}}</h1>
+        <p>{{blog.description}}</p>
+    </div>
+    {%endif%}
 </body>
 
 </html>
