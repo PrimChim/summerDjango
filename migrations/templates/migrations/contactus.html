@@ -6,6 +6,10 @@
     <title>Contact Us</title>
 </head>
 <body>
+    <a href="{% url 'about'%}">about</a>
+    <a href="{% url 'create'%}">create</a>
+    <a href="{% url 'contacts'%}">contacts</a>
+    <a href="{% url 'index'%}">index</a>
     <form style="display: flex; flex-direction: column;" method="post">
         {% csrf_token %}
         <label for="name">Name</label>

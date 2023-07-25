@@ -6,7 +6,7 @@
     <title>Create Page</title>
 </head>
 <body>
-    <style contenteditable="true" class="css">
+    <!-- <style contenteditable="true" class="css">
         *{
             margin: 0;
             padding: 0;
@@ -19,14 +19,33 @@
             background-color: white;
             display: block;
         }
-    </style>
-    <div class="">
-        <form action="{% url 'create' %}" method="POST">
+    </style> -->
+    <a href="{% url 'about'%}">about</a>
+    <a href="{% url 'create'%}">create</a>
+    <a href="{% url 'contacts'%}">contacts</a>
+    <a href="{% url 'index'%}">index</a>
+    <div class="main">
+        <h1>Create a blog</h1>
+        <form method="POST">
             {% csrf_token %}
             {{form}}
-            <input type="submit" value="Create">
+            <input type="submit" value="Save">
         </form>
     </div>
+    <style>
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
     
 </body>
 </html>
