@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<form style="display: flex; flex-direction: column;" method="post">
+    {% csrf_token %}
+    <label for="name">Name</label>
+    <input type="text" name="name" placeholder="Enter your name">
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="Enter your email">
+    <label for="message">Message</label>
+    <textarea name="message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+    <input type="submit" value="Submit">
+</form>
+<style>
+    body {
+        margin-top: 100px;
+        background-color: #555555;
+        color: #ffffff;
+    }
+{% endblock %}

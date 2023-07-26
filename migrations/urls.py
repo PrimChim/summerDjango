@@ -1,6 +1,7 @@
 from django.urls import path
 from .views import index, about, create, contacts,partData, delete, update
 
+app_name = 'migrations'
 urlpatterns = [
     path('',index, name='index'),
     path('about/',about, name='about'),

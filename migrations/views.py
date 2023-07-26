@@ -16,8 +16,8 @@ def create(request):
     form = BlogForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect("index")
-    return render(request, 'migrations/create.html', {"form":form})
+        return redirect("migrations:index")
+    return render(request, 'migrations/createblog.html', {"form":form})
 
 def partData(request, id):
     blog = Blog.objects.get(id=id)
@@ -27,15 +27,15 @@ def delete(request, id):
     print(id)
     blog = Blog.objects.get(id=id)
     blog.delete()
-    return redirect("index")
+    return redirect("migrations:index")
 
 def update(request, id):
     blog = Blog.objects.get(id=id)
     form = BlogForm(request.POST or None, instance=blog)
     if form.is_valid():
         form.save()
-        return redirect("index")
-    return render(request, 'migrations/create.html', {"form":form})
+        return redirect("migrations:index")
+    return render(request, 'migrations/createblog.html', {"form":form})
 
 def contacts(request):
     if(request.method == "POST"):
