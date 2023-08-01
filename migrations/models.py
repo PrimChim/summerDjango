@@ -15,3 +15,12 @@ class Contacts(models.Model):
 
     def __str__(self):
         return self.name
+    
+#footer
+class Footer(models.Model):
+    site_name = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+    logo = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.site_name

@@ -9,7 +9,7 @@
     <div class="row gx-4 gx-lg-5 justify-content-center">
       <div class="col-md-10 col-lg-8 col-xl-7">
         <div class="site-heading">
-          <h1>Clean Blog</h1>
+          <h1>Hancy Blog</h1>
           <span class="subheading">A Blog Theme by Start Bootstrap</span>
         </div>
       </div>
@@ -20,6 +20,12 @@
 <div class="container px-4 px-lg-5">
   <div class="row gx-4 gx-lg-5 justify-content-center">
     <div class="col-md-10 col-lg-8 col-xl-7">
+      <form class="d-flex" method="get" role="search">
+        {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
       <!-- Post preview-->
       {% for blog in blogs %}
       <div class="post-preview">
@@ -40,27 +46,6 @@
       <!-- Divider-->
       <hr class="my-4" />
       {% endfor %}
-
-
-
-      {% if blog %}
-      <div class="post-preview">
-
-          <h2 class="post-title">
-            {{ blog.title }}
-          </h2>
-          <p>
-            {{ blog.subheading }}
-          </p>
-          <p>
-            {{ blog.description }}
-          </p>
-
-        <p class="post-meta">
-          {{ blog.author }}
-        </p>
-      </div>
-      {% endif %}
       
     <!-- Pager-->
     <div class="d-flex justify-content-end mb-4">
