@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Blog,Contacts,Footer #manager objects
 from .forms import BlogForm
 from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
 
 # email
 from demo.settings import EMAIL_HOST_USER
@@ -34,6 +35,7 @@ def index(request):
 def about(request):
     return render(request, 'migrations/about.html', {"footer":footer})
 
+@login_required
 def create(request):
     form = BlogForm(request.POST or None)
     if form.is_valid():

@@ -5,5 +5,6 @@ from demo.views import homepage
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', include('migrations.urls'))
+    path('', include('migrations.urls')),
+    path('', include('users.urls')),
 ]
