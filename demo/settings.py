@@ -20,7 +20,7 @@ DEBUG = False
 
 
 
-ALLOWED_HOSTS = ['https://blog-application-y1q2.onrender.com/']
+ALLOWED_HOSTS = ['blog-application-y1q2.onrender.com/','pritamgurung.com.np']
 
 
 # Application definition
