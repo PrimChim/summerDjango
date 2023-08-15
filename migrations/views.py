@@ -47,8 +47,8 @@ def partData(request, id):
     blog = Blog.objects.get(id=id)
     return render(request, 'migrations/post.html', {"blog":blog, "footer":footer})
 
+@login_required
 def delete(request, id):
-    print(id)
     blog = Blog.objects.get(id=id)
     blog.delete()
     return redirect("migrations:index")
