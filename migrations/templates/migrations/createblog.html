@@ -38,8 +38,10 @@
                             <textarea class="form-control" id="message" placeholder="Enter your message here..."
                                 style="height: 12rem" name="description">{{blog.description}}</textarea>
                             <label for="message">Description</label>
-
                         </div>
+                        {% if user.is_authenticated %}
+                        <input type="hidden" name="user" value="{{user.id}}" />
+                        {% endif %}
 
                         
                         <br />
