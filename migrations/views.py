@@ -53,6 +53,7 @@ def delete(request, id):
     blog.delete()
     return redirect("migrations:index")
 
+@login_required
 def update(request, id):
     blog = Blog.objects.get(id=id)
     form = BlogForm(request.POST or None, instance=blog)
